@@ -1,6 +1,6 @@
-# Ejemplo de cómo diseñar método CRUD en la gema devise - Ruby on Rails
+# Diseñar el MVC de un sistema CRUD para los usuarios de una aplicación web con la gema devise
 
-Este proyecto le permite a los admin la creación, edición y eliminación de usuarios del sistema 
+Este proyecto le permite a los admin mostrar, crear, editar y eliminar ususarios del sistema 
 
 ## Visuales
 
@@ -73,8 +73,8 @@ rails db:seed
 rails s
 ```
 
-> [!INFO]
-> Para instalar 10 ususarios de prueba con fotos del sitio thispresondoesntexist.com ejecutar el seed
+> [!IMPORTANT]
+> Mientras no existe un usuario con rol "admin", el formulario de registro mostrará un listBox para asignar los roles, luego que se registre el primer usuario admin, solo podrá asignarse el rol admin a través del CRUD.
 
 ## Construido Con 🛠️
 
