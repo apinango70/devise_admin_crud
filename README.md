@@ -62,8 +62,8 @@ rails db:create
 rails db:migrate
 ```
 
-.[!TIP].
-NOTA:
+> [!TIP]
+> Optional information to help a user be more successful.
 
 ```bash
 rails db:seed
