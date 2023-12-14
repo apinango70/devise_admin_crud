@@ -1,0 +1,53 @@
+<!-- app/views/admin/users/index.html.erb -->
+
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-lg-10 col-md-6 col-sm-6">
+      <div class="card shadow">
+        <div class="card-title text-center border-bottom">
+          <h1 class="p-3">Users list</h1>
+        </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>First name</th>
+              <th>Last name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @users.each do |user| %>
+              <tr>
+                <td><%= user.id %></td>
+                <td><%= user.first_name %></td>
+                <td><%= user.last_name %></td>
+                <td><%= user.email %></td>
+                <td><%= user.role %></td>
+                <td>
+                  <div class="user-actions">
+                    <span class="action-link">
+                      <%= link_to 'Show', admin_user_path(user), class: 'btn btn-info btn-sm' %>
+                    </span>
+                    <span class="action-link">
+                      <%= link_to 'Edit', edit_admin_user_path(user), class: 'btn btn-primary btn-sm' %>
+                    </span>
+                    <span class="action-link">
+                      <%= button_to 'Delete', admin_user_path(user), method: :delete, data: { confirm: '¿Estás seguro?' }, class: 'btn btn-danger btn-sm', form_class: 'd-inline' %>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+          <div class=" d-flex justify-content-center align-items-center">
+            <%== pagy_bootstrap_nav(@pagy) %>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
