@@ -63,7 +63,7 @@ rails db:migrate
 ```
 
 > [!TIP]
-> Optional information to help a user be more successful.
+> Para instalar 10 ususarios de prueba con fotos del sitio thispresondoesntexist.com ejecutar el seed
 
 ```bash
 rails db:seed
