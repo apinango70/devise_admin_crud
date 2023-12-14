@@ -6,7 +6,8 @@ class Admin::UsersController < ApplicationController
 
   # Ejemplo de acciones CRUD
   def index
-    @users = User.all
+    #@users = User.all
+    @pagy, @users = pagy(User, items: 5) # Paginación
   end
 
   def show
