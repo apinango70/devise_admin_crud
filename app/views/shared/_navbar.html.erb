@@ -12,8 +12,23 @@
           <!--Si el user es admin mustra este menu-->
           <% if user_signed_in? && current_user.admin? %>
             <li class="nav-item">
-                <%= link_to 'Edit profile', edit_user_registration_path, class: 'nav-link' %>
+                <%= link_to 'Edit my profile', edit_user_registration_path, class: 'nav-link' %>
             </li>
+
+                    <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Users
+          </a>
+          <ul class="dropdown-menu">
+            <li class="nav-item">
+                <%= link_to 'Show Users', admin_users_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Create User', new_admin_user_path, class: 'nav-link' %>
+            </li>
+
+          </ul>
+        </li>
           <% end %>
           <!--Fin opciones del admin-->
       </ul>
