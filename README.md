@@ -1,6 +1,6 @@
 # Diseñar el MVC de un sistema CRUD para los usuarios de una aplicación web con la gema devise
 
-Este proyecto le permite a los admin mostrar, crear, editar y eliminar ususarios del sistema 
+Este proyecto le permite a los admin mostrar, crear, editar y eliminar usuarios del sistema 
 
 ## Visuales
 
