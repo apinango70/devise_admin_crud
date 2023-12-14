@@ -74,7 +74,7 @@ rails s
 ```
 
 > [!IMPORTANT]
-> Mientras no existe un usuario con rol "admin", el formulario de registro mostrará un listBox para asignar los roles, luego que se registre el primer usuario admin, solo podrá asignarse el rol admin a través del CRUD.
+> Mientras no exista un usuario con rol "admin", el formulario de registro mostrará un listBox para asignar los roles, luego que se registre el primer usuario admin, solo podrá asignarse el rol admin a través del CRUD.
 
 ## Construido Con 🛠️
 
