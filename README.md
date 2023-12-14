@@ -1,6 +1,6 @@
 # Ejemplo de cómo diseñar método CRUD en la gema devise - Ruby on Rails
 
-Este proyecto muestra cómo se puede crear un role admin y darle la posibilidad de hacer CRUD con los usuarios del sistema
+Este proyecto le permite a los admin la creación, edición y eliminación de usuarios del sistema 
 
 ## Visuales
 
@@ -72,6 +72,9 @@ rails db:seed
 ```bash
 rails s
 ```
+
+> [!INFO]
+> Para instalar 10 ususarios de prueba con fotos del sitio thispresondoesntexist.com ejecutar el seed
 
 ## Construido Con 🛠️
 
