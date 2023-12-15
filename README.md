@@ -1,24 +1,121 @@
-# README
+# Diseñar el MVC de un sistema CRUD para los usuarios de una aplicación web con la gema devise
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este proyecto le permite a los admin mostrar, crear, editar y eliminar usuarios del sistema 
 
-Things you may want to cover:
+## Visuales
 
-* Ruby version
+<img src="portada.jpg" alt="Screenshot de Devise admin CRUD"> 
 
-* System dependencies
+## Empezando 🚀
 
-* Configuration
+Estas instrucciones te guiarán para obtener una copia de este proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas. Ten en cuenta que el proyecto está en desarrollo y puede tener cambios en el futuro, por lo que se recomienda clonar el proyecto en lugar de descargarlo, para que puedas obtener las actualizaciones más recientes. También puedes hacer un fork del proyecto para contribuir con el desarrollo del mismo y estar al tanto de las actualizaciones.
 
-* Database creation
+Para obtener una copia local en funcionamiento, sigue estos pasos.
 
-* Database initialization
+```bash
+git clone https://github.com/apinango70/devise_admin_crud
+```
 
-* How to run the test suite
+Ingresa a la carpeta del proyecto
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+cd devise_admin_crud
+```
 
-* Deployment instructions
+Con estos simples pasos ya estas listo para comenzar a desarrollar.
 
-* ...
+### Prerrequisitos 📋
+
+Antes de comenzar, asegúrate de cumplir con los siguientes requisitos:
+
+- Sistema Operativo: Windows, Linux, macOS, WSL
+- Lenguaje de programación Ruby 3.2.2
+- Framework Ruby on Rails 7.0.8
+- Base de datos Postgresql
+
+Se recomienda usar un sistema unix-like (Linux, macOS, WSL) para el desarrollo de este proyecto. En caso de usar Windows, se recomienda usar WSL (Windows Subsystem for Linux) para el desarrollo de este proyecto. Si no se tiene instalado WSL, puedes seguir la siguiente guía de instalación: [Instalación de WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+
+Si no tienes instalado Ruby y Ruby on Rails, puedes seguir la siguiente guía de instalación: [Instalación de Ruby](https://www.ruby-lang.org/es/documentation/installation/)
+
+Si no tienes instalado Postgresql, puedes seguir la siguiente guía de instalación: [Instalación de Postgresql](https://www.postgresql.org/download/)
+
+### Gemas utilizadas en este proyecto
+
++ [Devise] - Para administrar los user y controles de acceso
++ [Pagy] - Para lapaginación de los registros
++ [Annotate] - Para mantener actualizados los modelos
++ [Active storage] - Para el manejo de las imágenes de los usuarios y las propiedades
+
+### Instalación 🔧
+
+Para poder ejecutar el proyecto después de haberlo clonado, debes ejecutar los siguientes pasos en tu terminal:
+
+```bash
+bundle install
+```
+
+```bash
+rails db:create
+```
+
+```bash
+rails db:migrate
+```
+
+> [!TIP]
+> Para instalar 10 usuarios de prueba con fotos para el perfil tomadas del sitio thispresondoesntexist.com ejecutar el seed
+
+```bash
+rails db:seed
+```
+
+```bash
+rails s
+```
+
+> [!IMPORTANT]
+> Mientras no exista un usuario con rol "admin", el formulario de registro mostrará un listBox para asignar los roles, luego que se registre el primer usuario admin, solo podrá asignarse el rol admin a través del CRUD.
+
+## Construido Con 🛠️
+
+Herramientas utilizadas para crear el proyecto:
+
+- [Ruby](https://www.ruby-lang.org/es/) - El lenguaje utilizado
+- [Ruby on Rails](https://rubyonrails.org) - El framework web utilizado
+- [Ruby gems](https://rubygems.org) - Gestión de dependencias
+- [Postgresql](https://www.postgresql.org) - Sistema de base de datos
+- [Bootstrap](https://getbootstrap.com) - Framework de CSS
+
+## Soporte
+
+Si tienes algún problema o sugerencia, por favor abre un hilo [aquí](https://github.com/apinango70/Aprendiendo-RubyOnRails/issues).
+
+## Roadmap
+
+Ideas, mejoras planificadas y actualizaciones futuras
+
+para el proyecto actual.
+
+## Versionado 📌
+
+Estoy usando [Git](https://git-scm.com) para el versionado.
+
+## Autor ✒️
+
+- [Alejandro Piñango](https://github.com/apinango70)
+
+## Licencia 📄
+
+Este proyecto está bajo la Licencia MIT - ve el archivo [LICENSE.md](LICENSE.md) para detalles
+
+## Expresiones de Gratitud 🎁
+
+Si encontraste cualquier valor en este proyecto o quieres contribuir, aquí está lo que puedes hacer:
+
+- Comparte este proyecto con otros
+- haz un fork de este proyecto
+- Deja una estrella ⭐️
+- Inicia un nuevo issue o contribuye con un PR
+- Muestra tu agradecimiento diciendo gracias en un nuevo Issue.
+
+⌨️ con ❤️ por [Alejandro Piñango](https://github.com/apinango70) 😊
