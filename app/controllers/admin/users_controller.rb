@@ -22,8 +22,9 @@ class Admin::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-  
-    if @user.update(user_params)
+    create_or_delete_users_tags(@user, params[:user][:tags],)
+
+    if @user.update(user_params.except(:tags))
       redirect_to admin_user_path(@user), notice: 'User was successfully updated.'
     else
       redirect_to admin_users_path, alert: 'User was not updated.'
@@ -41,19 +42,21 @@ class Admin::UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-  
+    @user = User.new(user_params.except(:tags))
+    create_or_delete_users_tags(@user, params[:user][:tags],)
+
+
     if @user.save
       redirect_to admin_user_path(@user), notice: 'User was successfully created.'
     else
       render :new
     end
   end
-  
+
 
 
   private
- 
+
   def authenticate_admin!
     unless current_user && current_user.admin?
       redirect_to root_path, alert: 'Access Denied.!'
@@ -65,6 +68,14 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def create_or_delete_users_tags(user, tags)
+    user.taggables.destroy_all
+      tags = tags.strip.split(',')
+      tags.each do |tag|
+      user.tags << Tag.find_or_create_by(name: tag)
+    end
+  end
+
   def user_params
     params.require(:user).permit(
                                   :first_name,
@@ -73,7 +84,8 @@ class Admin::UsersController < ApplicationController
                                   :role,
                                   :photo,
                                   :password,
-                                  :password_confirmation
+                                  :password_confirmation,
+                                  :tags
                                   )
   end
 

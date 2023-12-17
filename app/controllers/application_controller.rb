@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-  
+
   include Pagy::Backend
-  
+
   protected
 
   def configure_permitted_parameters
@@ -10,15 +10,16 @@ class ApplicationController < ActionController::Base
                                                         :first_name,
                                                         :last_name,
                                                         :role,
-                                                        :photo
-
+                                                        :photo,
+                                                        :tags
                                                        ])
 
     devise_parameter_sanitizer.permit(:account_update, keys: [
                                                                 :first_name,
                                                                 :last_name,
                                                                 :role,
-                                                                :photo
+                                                                :photo,
+                                                                :tags
                                                               ])
 
   end
