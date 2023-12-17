@@ -43,6 +43,11 @@
                   <%= form.password_field :password_confirmation, autocomplete: "new-password", class:'form-control' %>
                 </div>
 
+                <div class="mb-4">
+                  <%= form.label :tag, style: "display: block" %>
+                  <%= form.text_field :tags, value: @user.tags.map(&:name).join(",") , class:'form-control'%>
+                </div>
+
                 <%= form.submit 'Create user', class: 'btn btn-primary' %>
               </div>
             </form>

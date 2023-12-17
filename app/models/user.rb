@@ -26,4 +26,11 @@ class User < ApplicationRecord
   # Defino una foto al usuario
   has_one_attached :photo
 
+  #Relaciones
+  has_many :taggables, dependent: :destroy
+  has_many :tags, through: :taggables
+
+  #Validaciones
+  validates :first_name, :last_name, presence: true
+
 end

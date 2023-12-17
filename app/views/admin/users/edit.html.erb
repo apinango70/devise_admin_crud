@@ -51,6 +51,11 @@
                 <%= form.select :role, User.roles.keys.map { |w| [w.humanize, w] }, include_blank: "Select a role", class:'form-select' %>
               </div>
 
+              <div class="mb-4">
+                <%= form.label :tag, style: "display: block" %>
+                <%= form.text_field :tags, value: @user.tags.map(&:name).join(",") , class:'form-control'%>
+              </div>
+
               <div class="actions">
                 <%= form.submit 'Save changes', class: 'btn btn-primary' %>
                 <%= link_to 'Cancel', admin_user_path(@user), class: 'btn btn-secondary' %>
